@@ -4,7 +4,7 @@ const IssuesPage = () => {
   return (
     <div>
       <div>
-        <Button>
+        <Button className="cursor-pointer">
           <Link href="/issues/new">New Issue</Link>
         </Button>
       </div>
