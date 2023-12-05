@@ -1,5 +1,5 @@
-import { Status, Issue } from "@prisma/client"
-import { Badge, Flex } from "@radix-ui/themes"
+import { Status } from "@prisma/client"
+import { Badge } from "@radix-ui/themes"
 
 interface Props {
   status: Status

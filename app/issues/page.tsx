@@ -7,6 +7,7 @@ import Link from "next/link"
 const IssuesPage = async () => {
   const prisma = new PrismaClient()
   const issues = await prisma.issue.findMany()
+  
   return (
     <div>
       <IssueActions />
