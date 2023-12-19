@@ -5,6 +5,7 @@ import "./theme-config.css"
 
 import { Container, Theme } from "@radix-ui/themes"
 import "@radix-ui/themes/styles.css"
+import { Toaster } from "react-hot-toast"
 import QueryClientProvider from "./QueryClientProvider"
 import AuthProvider from "./auth/Provider"
 import Navbar from "./navbar"
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
+        <Toaster />
         <QueryClientProvider>
           <AuthProvider>
             <Theme appearance="light" accentColor="violet">
