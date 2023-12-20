@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
   title: "Issue Tracker",
-  description: "Created by Guillem",
+  description: "Created by Guillem Martinez",
 }
 
 export default function RootLayout({
