@@ -4,6 +4,7 @@ import { AlertDialog, Button, Flex } from "@radix-ui/themes"
 import axios from "axios"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import toast from "react-hot-toast"
 
 const DeleteIssueButton = ({ issueId }: { issueId: string }) => {
   const router = useRouter()
@@ -16,6 +17,7 @@ const DeleteIssueButton = ({ issueId }: { issueId: string }) => {
       await axios.delete(`/api/issues/${issueId}`)
       router.push("/issues")
       router.refresh()
+      toast.success("Issue deleted.")
     } catch (error) {
       setIsDeleting(false)
       setError(true)

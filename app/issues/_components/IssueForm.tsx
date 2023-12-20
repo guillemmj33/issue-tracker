@@ -10,6 +10,7 @@ import "easymde/dist/easymde.min.css"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Controller, useForm } from "react-hook-form"
+import toast from "react-hot-toast"
 import SimpleMDE from "react-simplemde-editor"
 import { z } from "zod"
 
@@ -35,6 +36,7 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
       else await axios.post("/api/issues", data)
       router.push("/issues")
       router.refresh()
+      toast.success("Issue has been updated.")
     } catch (error) {
       setIsSubmitting(false)
       setError("An error occurred while creating the issue.")
