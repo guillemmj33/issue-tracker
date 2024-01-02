@@ -32,11 +32,15 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
   const onSubmit = handleSubmit(async (data) => {
     try {
       setIsSubmitting(true)
-      if (issue) await axios.patch(`/api/issues/${issue.id}`, data)
-      else await axios.post("/api/issues", data)
+      if (issue) {
+        await axios.patch(`/api/issues/${issue.id}`, data);
+        toast.success("Issue has been updated.");
+      } else {
+        await axios.post("/api/issues", data);
+        toast.success("New issue has been posted.");
+      }
       router.push("/issues")
       router.refresh()
-      toast.success("Issue has been updated.")
     } catch (error) {
       setIsSubmitting(false)
       setError("An error occurred while creating the issue.")
